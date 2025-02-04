@@ -1,0 +1,23 @@
+import java .sql.*;
+pubile class connect 
+{
+pubile static void main (string s[])
+{
+try {
+class.forname ("sun. jdbc. odbc .jdbcodbc driver");
+connect con = drivermanage set connection ("jdbc : odbc :mydsn ","user", "pass");
+statement st = con.create statement ();
+result set rs = st. execute query ("select *from student ");
+while (rs.next ());
+{
+out.println(rs. getstring (2)+"" +rs.getInt (1));
+}
+rs.close();
+st.close();
+con. close;
+}
+catch (exeption e)}
+{
+out.println("sql exception "+e);
+}
+}       
